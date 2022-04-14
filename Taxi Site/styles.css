@@ -1,0 +1,287 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Roboto;
+    background: url("https://blog.resy.com/wp-content/uploads/2022/02/Gerardo-Alcaraz-Christopher-Reyes-topper-2000x1125.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background-attachment: fixed;
+    zoom: 80%;
+}
+
+
+
+.wrapper {
+    display: grid;
+    margin: 2rem auto;
+    row-gap: 20px;
+    max-width: 1024px;
+    justify-self: center;
+    padding: 0 2rem;
+}
+
+/* Navigation Section */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(230, 223, 26);
+}
+
+.navigation {
+    box-shadow: 0 0 10px rgb(79, 79, 79);
+}
+
+.logo {
+    font-size: 5rem;
+    padding-left: 1rem;
+    margin-top: -2.5rem;
+    transition: text-shadow 400ms;
+}
+
+.logo:hover {
+    text-shadow: -0.3rem 0.3rem rgba(72, 72, 72, 0.571);
+    cursor: pointer;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    gap: 1rem;
+    align-items: center;
+    width:max-content;
+}
+
+.navigation a {
+    text-decoration: none;
+    color:rgb(40, 40, 40);
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.nav-link {
+    margin-left: 1rem;
+}
+
+.nav-link:hover {
+    color:aliceblue;
+}
+
+#order {
+    margin: 0 2rem 0.3rem 1rem;
+    padding: 1rem;
+    border: 3px solid black; 
+    transition: box-shadow 400ms;
+}
+
+#order:hover {
+    color: black;
+    box-shadow: -0.3rem 0.3rem rgba(72, 72, 72, 0.571);
+}
+
+#order a {
+    font-size: 1.5rem;
+    text-transform: none;
+    font-weight: 700;
+}
+
+/* Mission Section */
+
+.mission {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    max-height: 400px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(79, 79, 79);
+}
+
+.taxi-pic {
+    width: 100%
+}
+
+.statement {
+    position: absolute;
+    background-color: rgba(240, 248, 255, 0.712);
+    text-align: center;
+    align-items: center;
+    padding: 0 3rem 1rem;
+    border: 3px solid black;
+}
+
+.statement h1 {
+    margin-bottom: 0.5rem;
+}
+
+.statement p {
+    font-size: larger;
+    margin-top: 0;
+}
+
+/* Features Section */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: max-content;
+    column-gap: 20px;
+}
+
+.feature-box {
+    background-color: white;
+    border: 10px solid rgb(255,185,0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 0 10px rgb(79, 79, 79);
+}
+
+.feature-box h2 {
+    margin-bottom: 0; 
+}
+
+.feature-box p {
+    text-align: center;
+}
+
+.icon img {
+    height: 4rem;
+}
+
+/* Team section */
+
+.section-name {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    width: fit-content;
+    margin: 0 auto;
+    color: white;
+    border-top: 5px solid rgb(230, 223, 26);
+    border-bottom: 5px solid rgb(230, 223, 26);
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+}
+
+.person-container {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    padding: 5%;
+    max-height: max-content;
+    box-shadow: 0 0 10px rgb(79, 79, 79);
+}
+
+.about {
+    text-align: center;
+    width: 100%;
+    
+}
+
+.about h3 {
+    font-size: 1.4rem;
+}
+
+.about strong {
+    color: rgb(60, 59, 59);
+}
+
+.about ul {
+    padding: 0 5%;
+}
+
+.about li {
+    text-align: left;
+    font-size: 1.2rem;
+    list-style-type: none;
+    
+}
+
+.mugshot {
+    width: 100%;
+}
+
+/* Contacts Section */
+
+.contacts {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    background-color: aliceblue;
+    border: 10px solid rgb(255,185,0);
+    overflow: hidden;
+}
+
+.map {
+    
+    width: 100%;
+}
+
+.info {
+    
+    padding: 2rem;
+    
+}
+
+.info h2 {
+    margin: 0 0 2rem;
+    text-align: center;
+}
+
+.text-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.info img {
+    width: 2rem;
+    margin: 15px;
+}
+
+
+/* Footer Section */
+
+footer {
+    display: flex;
+    height: 7rem;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    margin-bottom: 2rem;
+}
+
+#top-btn {
+    margin: 0 2rem 0.3rem 1rem;
+    padding: 1rem;
+    border: 3px solid black; 
+    transition: box-shadow 400ms;
+    background-color: rgb(230, 223, 26);
+}
+
+#top-btn:hover {
+    cursor: pointer;
+    color: black;
+    box-shadow: -0.3rem 0.3rem rgba(0, 0, 0, 0.488);
+}
+
+#top-btn a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
