@@ -1,4 +1,4 @@
-html {
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,23 +9,109 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    backdrop-filter: blur(8px);
     background-attachment: fixed;
-    zoom: 80%;
+    backdrop-filter: blur(8px);
 }
 
 
 
 .wrapper {
     display: grid;
-    margin: 2rem auto;
+    margin: 0 auto;
     row-gap: 20px;
     max-width: 1024px;
     justify-self: center;
-    padding: 0 2rem;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 870px) {
+    body {
+        zoom: 70%
+    }
 }
 
 /* Navigation Section */
+
+.mobile {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+.mobile button {
+    background-color: rgb(230, 223, 26);
+    border: 5px solid black;
+    transition: box-shadow 400ms;
+    z-index: 3;
+    position: relative;
+}
+
+.mobile button:hover {
+    box-shadow: -0.3rem 0.3rem rgba(13, 13, 13, 0.571);
+    cursor: pointer;
+}
+
+.mobile button p {
+    font-size: 5rem;
+    margin: 0;
+    margin-top: -2rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Goddamn z-index not working!
+    What I want: clicking the button toggles a div with ul on the left side of screen
+                 But the button remains on top of the div, everything else behind the div.
+    What I've tried: position: relative;
+                     z-index on parent and child elements;
+
+    FIXED! Solution: put position:relative; also on the button itself, not just the parent element.
+*/
+
+#mobile-menu {
+    z-index: 2;
+    position: fixed;
+    background-color: rgb(230, 223, 26);
+    width: 15rem;
+    height: 25rem;
+    top: -3rem;
+    left: -3rem;
+}
+
+#mobile-menu ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 13rem;
+    margin-left: 6rem;
+}
+
+.mobile-link {
+    text-decoration: none;
+    color:rgb(40, 40, 40);
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.mobile-link:hover {
+    color: white;
+}
+
+#mobile-menu button {
+    margin-left: -1.5rem;
+    background-color: aliceblue;
+    margin-top: 1rem;
+    padding: 0.5rem 0.3rem;
+}
+
+#mobile-taxi-btn {
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: none;
+    color:rgb(40, 40, 40);
+    text-decoration: none;
+    
+}
+
 
 .navigation {
     display: flex;
@@ -86,6 +172,7 @@ html {
 #order:hover {
     color: black;
     box-shadow: -0.3rem 0.3rem rgba(72, 72, 72, 0.571);
+    cursor: pointer;
 }
 
 #order a {
@@ -93,6 +180,23 @@ html {
     text-transform: none;
     font-weight: 700;
 }
+
+@media screen and (max-width:870px) {
+
+    .navigation {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    #mobile-menu {
+        display: none;
+    }
+
+}
+
 
 /* Mission Section */
 
@@ -107,7 +211,8 @@ html {
 }
 
 .taxi-pic {
-    width: 100%
+    width: 100%;
+    min-height: fit-content;
 }
 
 .statement {
@@ -117,6 +222,9 @@ html {
     align-items: center;
     padding: 0 3rem 1rem;
     border: 3px solid black;
+    
+    max-width: max-content;
+    margin: 2rem auto;
 }
 
 .statement h1 {
@@ -128,13 +236,15 @@ html {
     margin-top: 0;
 }
 
+
+
 /* Features Section */
 
 .features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: max-content;
-    column-gap: 20px;
+    gap: 20px;
 }
 
 .feature-box {
@@ -157,6 +267,13 @@ html {
 
 .icon img {
     height: 4rem;
+}
+
+@media screen and (max-width: 870px) {
+    .features {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
 }
 
 /* Team section */
@@ -216,6 +333,22 @@ html {
     width: 100%;
 }
 
+@media screen and (max-width: 870px){
+    .team {
+        grid-template: 1fr 1fr 1fr / 1fr;
+    }
+
+    .person-container {
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    .mugshot {
+        height: 17rem;
+        width:auto
+    }
+}
+
 /* Contacts Section */
 
 .contacts {
@@ -250,6 +383,41 @@ html {
 .info img {
     width: 2rem;
     margin: 15px;
+}
+
+@media screen and (max-width: 870px) {
+    .contacts {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+    .info {
+        grid-row: 1;
+        display: grid;
+        grid-template: auto 1fr / 1fr 1fr;
+    }
+
+    .text-wrapper {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .map {
+        align-self: flex-end;
+    }
+
+    .info h2 {
+        margin: 0;
+        grid-column: 1 / span2;
+    }
+
+    .info img {
+        margin: 0 15px;
+        align-self: center;
+        justify-self: center;
+    }
 }
 
 
